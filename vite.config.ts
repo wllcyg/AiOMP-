@@ -16,39 +16,46 @@ function figmaAssetResolver() {
   }
 }
 
-export default defineConfig({
-  plugins: [
-    figmaAssetResolver(),
-    // The React and Tailwind plugins are both required for Make, even if
-    // Tailwind is not being actively used – do not remove them
-    react(),
-    tailwindcss(),
-  ],
-  resolve: {
-    alias: {
-      // Alias @ to the src directory
-      '@': path.resolve(__dirname, './src'),
-    },
-  },
+export default defineConfig(({ mode }) => {
+  const isVercel = process.env.VERCEL === '1';
 
-  // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
-  assetsInclude: ['**/*.svg', '**/*.csv'],
-  build: {
-  "lib": {
-    "entry": [
-      "./src/index.ts"
+  return {
+    plugins: [
+      figmaAssetResolver(),
+      // The React and Tailwind plugins are both required for Make, even if
+      // Tailwind is not being actively used – do not remove them
+      react(),
+      tailwindcss(),
     ],
-    "formats": [
-      "es"
-    ],
-    "cssFileName": "style"
-  },
-  "rollupOptions": {
-    "output": {
-      "preserveModules": true,
-      "preserveModulesRoot": "src",
-      "entryFileNames": "[name].js"
-    }
+    resolve: {
+      alias: {
+        // Alias @ to the src directory
+        '@': path.resolve(__dirname, './src'),
+      },
+    },
+
+    // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
+    assetsInclude: ['**/*.svg', '**/*.csv'],
+    
+    build: isVercel ? {
+      outDir: 'dist',
+    } : {
+      lib: {
+        entry: [
+          "./src/index.ts"
+        ],
+        formats: [
+          "es"
+        ],
+        cssFileName: "style"
+      },
+      rollupOptions: {
+        output: {
+          preserveModules: true,
+          preserveModulesRoot: "src",
+          entryFileNames: "[name].js"
+        }
+      }
+    },
   }
-},
 })
