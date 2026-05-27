@@ -1,0 +1,75 @@
+/* About h1-cn-medium: @font-size-titleMedium */
+.h1-cn-medium {
+  font-family: "PingFang SC";
+  font-style: "Semibold";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+/* About h1-cn-regular: @font-size-bodyLarge */
+.h1-cn-regular {
+  font-family: "PingFang SC";
+  font-style: "Regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+/* About h2-cn-medium: @font-size-bodyMedium */
+.h2-cn-medium {
+  font-family: "PingFang SC";
+  font-style: "Medium";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0px;
+}
+
+/* About h2-cn-regular: @font-size-titleExtraLarge */
+.h2-cn-regular {
+  font-family: "PingFang SC";
+  font-style: "Regular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0px;
+}
+
+/* About body12-cn-medium: @font-size-titleSmall */
+.body12-cn-medium {
+  font-family: "PingFang SC";
+  font-style: "Medium";
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0px;
+}
+
+.body12-cn-regular {
+  font-family: "PingFang SC";
+  font-style: "Regular";
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+.body10-cn-medium {
+  font-family: "PingFang SC";
+  font-style: "Medium";
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0px;
+}
+
+/* About body10-cn-regular: 侧边栏备注字体 */
+.body10-cn-regular {
+  font-family: "PingFang SC";
+  font-style: "Regular";
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
